@@ -1,0 +1,715 @@
+/* fonts */
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(../assets/fonts/static/Inter-Regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url(../assets/fonts/static/Inter-SemiBold.ttf) format("truetype");
+}
+
+/* vars */
+
+:root {
+  --primary: #345ff6;
+  --secondary: #253347;
+  --neutral: #5e6e85;
+  --white: #ffffff;
+  --muted-primary: #d6e6fe;
+}
+
+/* globals */
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html {
+  font: 400 16px/24px "Inter";
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--secondary);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-block: 0;
+}
+
+b {
+  font-weight: 600;
+}
+
+button {
+  appearance: none;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+
+input {
+  appearance: none;
+  font: inherit;
+  cursor: pointer;
+}
+
+button:focus {
+  outline: none;
+}
+
+ul {
+  margin-block: 0;
+  padding-inline-start: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+/* texts */
+
+.heading-xl,
+.heading-l,
+.heading-m,
+.heading-s {
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.05em;
+}
+
+.heading-xl {
+  font-size: 3rem;
+}
+
+.heading-l {
+  font-size: 2rem;
+}
+
+.heading-m {
+  font-size: 1.5rem;
+}
+
+.heading-s {
+  font-size: 1.25rem;
+}
+
+.body-m,
+.body-m-bold,
+.body-s {
+  line-height: 1.5;
+  letter-spacing: normal;
+}
+
+.body-m {
+  font-size: 1rem;
+}
+
+.body-m-bold {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.body-s {
+  font-size: 0.875rem;
+}
+
+.bold {
+  font-weight: 600;
+}
+
+.muted {
+  color: var(--neutral);
+}
+
+/* controls */
+
+.field {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.field input,
+.field span {
+  /* NOTE: same as .heading-m */
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.1;
+}
+
+.field input {
+  width: 100%;
+  padding: 1.25rem 4.5rem 1.25rem 1.5rem;
+  border: 1px solid var(--neutral);
+  border-radius: 0.75rem;
+}
+
+.field input:hover,
+.field input:active {
+  border-color: var(--primary);
+}
+
+.field input:focus {
+  outline: var(--primary) solid 2px;
+  outline-offset: -2px;
+}
+
+.field input::placeholder {
+  color: var(--neutral);
+}
+
+.field span {
+  position: absolute;
+  top: 50%;
+  right: 1.5rem;
+  transform: translateY(-50%);
+  color: var(--primary);
+}
+
+.fieldset {
+  margin: 0;
+  border: none;
+  padding: 0;
+  width: 100%;
+}
+
+.fieldset legend {
+  margin-bottom: 0.5rem;
+  color: var(--neutral);
+}
+
+/* other components */
+
+.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  font-weight: 600;
+}
+
+.tab::before {
+  content: "";
+  width: 1.8125em;
+  height: 1.8125em;
+  border: 1px solid var(--neutral);
+  border-radius: 50%;
+}
+
+.tab::after {
+  content: "";
+  position: absolute;
+  top: calc(1.9375em / 2 - 0.4375em);
+  left: calc(1.9375em / 2 - 0.1875em);
+  width: 0.9375em;
+  height: 0.9375em;
+  border-radius: 50%;
+  background: var(--primary);
+  transition:
+    transform 0.25s ease-out,
+    opacity 0.25s ease-out;
+}
+
+.tab[data-selected]::before {
+  border-color: transparent;
+  background-color: hsla(227, 92%, 58%, 0.15);
+}
+
+.tab:not([data-selected])::after {
+  opacity: 0;
+  transform: scale(0.5);
+}
+
+.tab:hover::before {
+  border-color: var(--primary);
+}
+
+.tab:focus::before {
+  outline: var(--primary) solid 2px;
+  outline-offset: -2px;
+}
+
+.tab-pane:not(.active) {
+  display: none;
+}
+
+/* utils */
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* content */
+
+body {
+  padding: 2rem 1.5rem 6rem;
+}
+
+.logo {
+  width: 2.5rem;
+  height: 2.5rem;
+  margin: 0 auto 1.5rem;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.lead::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 640px;
+  border-bottom-left-radius: 35px;
+  border-bottom-right-radius: 35px;
+  background: linear-gradient(to left, var(--muted-primary), transparent);
+  z-index: -1;
+}
+
+.lead h1 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.lead p {
+  color: var(--neutral);
+  text-align: center;
+}
+
+.calculator {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background: var(--white);
+}
+
+.calculator__unit {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.calculator__unit li {
+  width: 100%;
+}
+
+.calculator__params {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#imperial .fieldset {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1rem;
+}
+
+.calculator__result {
+  overflow: hidden;
+  border-radius: 1rem;
+}
+
+#bmi {
+  padding: 2rem;
+  color: var(--white);
+  background: var(--primary);
+}
+
+#bmi.welcome h3 {
+  margin-bottom: 1rem;
+}
+
+#bmi:not(.welcome) h3 {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+}
+
+#bmi:not(.welcome) h3 span {
+  margin-bottom: 0.5rem;
+}
+
+.explanation {
+  margin-top: 4.5rem;
+}
+
+.explanation__header {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 0 -1.5rem;
+}
+
+.explanation__banner {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.explanation__meaning {
+  padding: 0 1.5rem;
+}
+
+.explanation__meaning h2 {
+  margin-bottom: 2rem;
+}
+
+.explanation__meaning p {
+  color: var(--neutral);
+}
+
+.explanation__items {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  margin-top: 8rem;
+}
+
+.explanation__item {
+  display: grid;
+  align-items: center;
+}
+
+.explanation__item::before {
+  content: "";
+  margin-bottom: 2rem;
+  width: 4rem;
+  height: 4rem;
+  background: var(--icon);
+}
+
+.explanation__item h3 {
+  margin-bottom: 1.5rem;
+}
+
+.explanation__item p {
+  color: var(--neutral);
+}
+
+.limits {
+  margin-top: 8rem;
+}
+
+.limits__header {
+  text-align: center;
+}
+
+.limits__header h3 {
+  margin-bottom: 2rem;
+}
+
+.limits__header p {
+  color: var(--neutral);
+}
+
+.limits__items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 3.5rem;
+}
+
+.limits__item {
+  border-radius: 1rem;
+  padding: 1.5rem;
+  max-width: 365px;
+  background: var(--white);
+  box-shadow: 1rem 2rem 3.5rem #90afd040;
+}
+
+.limits__item h4 {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.limits__item h4::before {
+  content: "";
+  width: 2rem;
+  height: 2rem;
+  background: var(--icon);
+}
+
+.limits__item p {
+  color: var(--neutral);
+}
+
+@media (min-width: 768px) {
+  body {
+    padding: 2rem 2.5rem 6rem;
+  }
+
+  .logo {
+    margin-bottom: 2.5rem;
+  }
+
+  .content {
+    gap: 2.5rem;
+  }
+
+  .lead h1 {
+    padding: 0 25%;
+  }
+
+  .calculator {
+    gap: 2rem;
+    padding: 2rem;
+  }
+
+  .calculator__params {
+    gap: 1.5rem;
+  }
+
+  #metric {
+    flex-direction: row;
+  }
+
+  #bmi {
+    border-top-right-radius: 999rem;
+    border-bottom-right-radius: 999rem;
+  }
+
+  #bmi:not(.welcome) {
+    display: grid;
+    align-items: center;
+    gap: 1.5rem;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  #bmi:not(.welcome) h3 {
+    margin-bottom: 0;
+  }
+
+  .explanation {
+    margin-top: 6rem;
+  }
+
+  .explanation__header {
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+    gap: 75px;
+    margin: 0;
+  }
+
+  .explanation__banner {
+    width: auto;
+    max-height: 411px;
+  }
+
+  .explanation__meaning {
+    padding: 0;
+    min-width: 331px;
+  }
+
+  .explanation__header > * {
+    width: 100%;
+  }
+
+  .explanation__items {
+    margin-top: 9.75rem;
+  }
+
+  .explanation__item {
+    grid-template-columns: auto 1fr;
+  }
+
+  .explanation__item::before {
+    grid-row: 1 / span 2;
+    margin-right: 2.5rem;
+    margin-bottom: 0;
+  }
+
+  .limits {
+    margin-top: 9.75rem;
+  }
+
+  .limits__items {
+    justify-content: center;
+    gap: 1.5rem 1rem;
+  }
+
+  .limits__item {
+    flex-basis: calc(50% - 0.5rem);
+    padding: 2rem;
+  }
+}
+
+@media (min-width: 1440px) {
+  .heading-xl {
+    font-size: 4rem;
+  }
+
+  .heading-l {
+    font-size: 3rem;
+  }
+
+  body {
+    padding: 4.625rem 8.75rem 7.5rem;
+  }
+
+  .logo {
+    width: inherit;
+    height: inherit;
+    margin: 0 0 1.75rem;
+  }
+
+  .content {
+    flex-direction: row;
+    gap: 2rem;
+  }
+
+  .content > * {
+    flex-basis: calc(50% - 1rem);
+  }
+
+  .lead {
+    padding-right: 6.125rem;
+  }
+
+  .lead::before {
+    left: 1.5rem;
+    right: unset;
+    width: 978px;
+    height: 738px;
+  }
+
+  .lead h1,
+  .lead p {
+    text-align: start;
+  }
+
+  .lead h1 {
+    padding: 0;
+    margin: 6.125rem 0 2.125rem;
+  }
+
+  .explanation {
+    margin-top: 9.375rem;
+  }
+
+  .explanation__header {
+    position: relative;
+    align-items: end;
+    gap: 8.25rem;
+  }
+
+  .explanation__header::before {
+    content: "";
+    position: absolute;
+    top: -51px;
+    right: 27px;
+    width: 85.831px;
+    height: 200.501px;
+    background: url("../assets/images/pattern-curved-line-left.svg");
+  }
+
+  .explanation__banner {
+    max-height: 533px;
+  }
+
+  .explanation__meaning {
+    margin-bottom: 2.5rem;
+  }
+
+  .explanation__meaning h2 {
+    margin-bottom: 2.125rem;
+  }
+
+  .explanation__items {
+    flex-direction: row;
+    gap: 2rem;
+    margin-top: 10.5rem;
+  }
+
+  .explanation__item {
+    flex: 1;
+    grid-template-columns: unset;
+  }
+
+  .explanation__item::before {
+    grid-row: unset;
+    margin-right: 0;
+    margin-bottom: 2.75rem;
+  }
+
+  .limits {
+    position: relative;
+    margin-top: 13.5rem;
+  }
+
+  .limits__header {
+    position: absolute;
+    text-align: start;
+    max-width: 35.25rem;
+  }
+
+  .limits__header p::before {
+    content: "";
+    position: absolute;
+    top: calc(100% + 67px);
+    left: 165px;
+    width: 94.664px;
+    height: 122.518px;
+    background: url("../assets/images/pattern-curved-line-right.svg");
+  }
+
+  .limits__items {
+    display: grid;
+    grid-template-columns: 1fr auto auto;
+    justify-items: end;
+    gap: 1.5rem 2rem;
+  }
+
+  .limits__item:nth-child(1) {
+    grid-column: span 3;
+    margin-right: 6.25rem;
+  }
+
+  .limits__item:nth-child(2) {
+    grid-column: span 2;
+  }
+
+  .limits__item:nth-child(5) {
+    grid-column: span 2;
+    margin-right: 12.5rem;
+  }
+}

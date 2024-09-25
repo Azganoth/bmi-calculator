@@ -1,0 +1,11 @@
+{
+  "name": "bmi-calculator",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
+  }
+}
