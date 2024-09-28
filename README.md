@@ -30,8 +30,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Mobile-first solution using Flexbox and Grid](https://www.frontendmentor.io/solutions/mobile-first-solution-using-flexbox-and-grid-YYX0I0WTtD)
+- Live Site URL: [Body Mass Index Calculator](https://azganoth.github.io/bmi-calculator/)
 
 ## My process
 
