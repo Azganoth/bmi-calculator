@@ -23,7 +23,6 @@
   --secondary: #253347;
   --neutral: #5e6e85;
   --white: #ffffff;
-  --muted-primary: #d6e6fe;
 }
 
 /* globals */
@@ -295,7 +294,7 @@ body {
   height: 640px;
   border-bottom-left-radius: 35px;
   border-bottom-right-radius: 35px;
-  background: linear-gradient(-45deg, var(--muted-primary), transparent);
+  background: linear-gradient(-45deg, #d6e6fe, #d7fcfe00);
   z-index: -1;
 }
 
@@ -317,6 +316,7 @@ body {
   margin-top: 3rem;
   padding: 1.5rem;
   background: var(--white);
+  box-shadow: 1rem 2rem 3.5rem #90afd040;
 }
 
 .calculator__unit {
