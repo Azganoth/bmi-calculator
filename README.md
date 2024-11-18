@@ -1,20 +1,19 @@
-# Frontend Mentor - Body Mass Index Calculator solution
+# Frontend Mentor Challenge: Body Mass Index Calculator
 
-This is a solution to the [Body Mass Index Calculator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/body-mass-index-calculator-brrBkfSz1T).
+This is a solution for the [Body Mass Index Calculator app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/body-mass-index-calculator-brrBkfSz1T).
 
 ## Table of contents
 
 - [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Screenshot](#screenshot)
+- [Development](#development)
+  - [Stack](#stack)
+  - [Tools and Workflow](#tools-and-workflow)
+- [Showcase](#showcase)
   - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
+  - [Screenshots](#screenshots)
 - [Author](#author)
 
-## Overview
-
-### The challenge
+## <a name="overview">Overview 📋</a>
 
 Users should be able to:
 
@@ -24,28 +23,33 @@ Users should be able to:
 - View the optimal layout for the interface depending on their device's screen size
 - See hover and focus states for all interactive elements on the page
 
-### Screenshot
+## <a name="development">Development 🛠️</a>
 
-![](./screenshot.jpeg)
+### Stack
+
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+
+### Tools and Workflow
+
+- **GitHub Pages**
+- **Prettier**
+
+## <a name="showcase">Showcase 🖼️</a>
 
 ### Links
 
 - Solution URL: [Mobile-first solution using Flexbox and Grid](https://www.frontendmentor.io/solutions/mobile-first-solution-using-flexbox-and-grid-YYX0I0WTtD)
 - Live Site URL: [Body Mass Index Calculator](https://azganoth.github.io/bmi-calculator/)
 
-## My process
+### Screenshots
 
-### Built with
+#### Home
 
-- HTML5
-  - Semantic markup
-- CSS3
-  - Custom properties
-  - Flexbox
-  - Grid
-- Mobile-first workflow
+![](/screenshot.jpeg)
 
-## Author
+## <a name="author">Author ✍️</a>
 
 - Website - [Ademir José Ferreira Júnior](https://github.com/Azganoth)
 - Frontend Mentor - [@Azganoth](https://www.frontendmentor.io/profile/Azganoth)
